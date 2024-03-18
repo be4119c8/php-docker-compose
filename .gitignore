@@ -1,0 +1,7 @@
+data/
+/www
+logs
+*.log
+.idea/
+.vscode/
+.DS_Store
