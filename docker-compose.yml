@@ -13,7 +13,7 @@ services:
     networks:
       - nginx-php
   php:
-    image: php7:1.0
+    image: php8:1.0
     container_name: php
     restart: always
     ports:
@@ -21,7 +21,9 @@ services:
     environment:
       - TZ=Asia/Shanghai
     volumes:
-      - "./www/:/var/www/html/"
+      - ./www/:/var/www/html/
+      - ./php/php8/log/:/var/log/xdebug/
+      - ./php/php8/ini/conf.d/:/usr/local/etc/php/conf.d/
     networks:
       - nginx-php
   mysql:
